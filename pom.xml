@@ -13,23 +13,31 @@
 	</properties>
 
 	<dependencies>
-		<!-- springmvc包 -->
+		<!-- jstl -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<!-- jstl -->
+		
+		<!-- springmvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>4.3.7.RELEASE</version>
 		</dependency>
-		<!-- springmvc包 -->
+		<!-- springmvc -->
 
-		<!-- spring data jpa包 -->
+		<!-- spring data jpa -->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
 			<version>1.11.1.RELEASE</version>
 		</dependency>
-		<!-- spring data jpa包 -->
+		<!-- spring data jpa -->
 
-		<!-- hibernate包 -->
+		<!-- hibernate -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
@@ -40,23 +48,23 @@
 			<artifactId>hibernate-c3p0</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-		<!-- hibernate包 -->
+		<!-- hibernate -->
 
-		<!-- mysql包 -->
+		<!-- mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.39</version>
 		</dependency>
-		<!-- mysql包 -->
+		<!-- mysql -->
 
-		<!-- jackson包 -->
+		<!-- jackson -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.8.0</version>
 		</dependency>
-		<!-- jackson包 -->
+		<!-- jackson -->
 
 		<dependency>
 			<groupId>junit</groupId>
