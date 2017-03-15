@@ -16,8 +16,8 @@
 	<mvc:annotation-driven />
 
 	<!-- 处理对静态资源的请求 -->
-	<mvc:resources location="/resources/*" mapping="/resources/**" />
-	<mvc:resources location="/dwz/*" mapping="/dwz/**" />
+	<mvc:resources location="/resources/" mapping="/resources/**" />
+	<mvc:resources location="/dwz/" mapping="/dwz/**" />
 
 	<!-- 视图解析器 -->
 	<!-- 解析主页 -->
