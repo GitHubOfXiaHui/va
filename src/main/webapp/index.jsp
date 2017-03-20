@@ -24,52 +24,6 @@
 <script src="dwz/xheditor/xheditor_lang/zh-cn.js" type="text/javascript"></script>
 <script src="dwz/uploadify/scripts/jquery.uploadify.js" type="text/javascript"></script>
 
-<!-- svg图表  supports Firefox 3.0+, Safari 3.0+, Chrome 5.0+, Opera 9.5+ and Internet Explorer 6.0+ -->
-<script type="text/javascript" src="dwz/chart/raphael.js"></script>
-<script type="text/javascript" src="dwz/chart/g.raphael.js"></script>
-<script type="text/javascript" src="dwz/chart/g.bar.js"></script>
-<script type="text/javascript" src="dwz/chart/g.line.js"></script>
-<script type="text/javascript" src="dwz/chart/g.pie.js"></script>
-<script type="text/javascript" src="dwz/chart/g.dot.js"></script>
-
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=6PYkS1eDz5pMnyfO0jvBNE0F"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
-
-<!-- 
-<script src="dwz/js/dwz.core.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.util.date.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.validate.method.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.barDrag.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.drag.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.tree.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.accordion.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.ui.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.theme.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.switchEnv.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.alertMsg.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.contextmenu.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.navTab.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.tab.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.resize.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.dialog.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.dialogDrag.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.sortDrag.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.cssTable.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.stable.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.taskBar.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.ajax.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.pagination.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.database.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.datepicker.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.effects.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.panel.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.checkbox.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.history.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.combox.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.file.js" type="text/javascript"></script>
-<script src="dwz/js/dwz.print.js" type="text/javascript"></script>
- -->
- 
 <!-- 可以用dwz.min.js替换前面全部dwz.*.js (注意：替换时下面dwz.regional.zh.js还需要引入) -->
 <script src="dwz/bin/dwz.min.js" type="text/javascript"></script>
 
@@ -79,7 +33,7 @@
 $(function(){
 	DWZ.init("dwz/dwz.frag.xml", {
 		loginUrl:"dwz/login_dialog.html", loginTitle:"登录",	// 弹出登录对话框
-//		loginUrl:"login.html",	// 跳到登录页面
+//		loginUrl:"dwz/login.html",	// 跳到登录页面
 		statusCode:{ok:200, error:300, timeout:301}, //【可选】
 		pageInfo:{pageNum:"pageNum", numPerPage:"numPerPage", orderField:"orderField", orderDirection:"orderDirection"}, //【可选】
 		keys: {statusCode:"statusCode", message:"message"}, //【可选】
@@ -100,35 +54,9 @@ $(function(){
 			<div class="headerNav">
 				<a class="logo" href="http://j-ui.com">标志</a>
 				<ul class="nav">
-					<li id="switchEnvBox"><a href="javascript:">（<span>北京</span>）切换城市</a>
-						<ul>
-							<li><a href="sidebar_1.html">北京</a></li>
-							<li><a href="sidebar_2.html">上海</a></li>
-							<li><a href="sidebar_2.html">南京</a></li>
-							<li><a href="sidebar_2.html">深圳</a></li>
-							<li><a href="sidebar_2.html">广州</a></li>
-							<li><a href="sidebar_2.html">天津</a></li>
-							<li><a href="sidebar_2.html">杭州</a></li>
-						</ul>
-					</li>
-					<li><a href="donation.html" target="dialog" height="400" title="捐赠 & DWZ学习视频">捐赠</a></li>
-					<li><a href="changepwd.html" target="dialog" width="600">设置</a></li>
-					<li><a href="http://www.cnblogs.com/dwzjs" target="_blank">博客</a></li>
-					<li><a href="http://weibo.com/dwzui" target="_blank">微博</a></li>
-					<li><a href="login.html">退出</a></li>
-				</ul>
-				<ul class="themeList" id="themeList">
-					<li theme="default"><div class="selected">蓝色</div></li>
-					<li theme="green"><div>绿色</div></li>
-					<!--<li theme="red"><div>红色</div></li>-->
-					<li theme="purple"><div>紫色</div></li>
-					<li theme="silver"><div>银色</div></li>
-					<li theme="azure"><div>天蓝</div></li>
+					<li><a href="dwz/login.html">退出</a></li>
 				</ul>
 			</div>
-
-			<!-- navMenu -->
-			
 		</div>
 
 		<div id="leftside">
@@ -138,118 +66,259 @@ $(function(){
 				</div>
 			</div>
 			<div id="sidebar">
+				
 				<div class="toggleCollapse"><h2>主菜单</h2><div>收缩</div></div>
-
+				
 				<div class="accordion" fillSpace="sidebar">
 					<div class="accordionHeader">
-						<h2><span>Folder</span>界面组件</h2>
+						<h2><span>Folder</span>采购业务管理</h2>
 					</div>
 					<div class="accordionContent">
 						<ul class="tree treeFolder">
-							<li><a href="tabsPage.html" target="navTab">主框架面板</a>
+							<li><a>新车采购</a>
 								<ul>
-									<li><a href="main.html" target="navTab" rel="main">我的主页</a></li>
-									<li><a href="demo/row-col.html" target="navTab" rel="row-col">栅格系统(Bootstrap)</a></li>
-									<li><a href="http://www.baidu.com" target="navTab" rel="page1">页面一(外部链接)</a></li>
-									<li><a href="demo/baidu_map_iframe.html" target="navTab" rel="bmap" external="true" title="需要设置external属性为true">地图(external iframe方式)</a></li>
-									<li><a href="demo/baidu_map.html" target="navTab" rel="bmap">地图(直接嵌入方式)</a></li>
-									<li><a href="demo_page1.html" target="navTab" rel="page1" fresh="false">替换页面一</a></li>
-									<li><a href="demo_page2.html" target="navTab" rel="page2">页面二</a></li>
-									<li><a href="demo_page4.html" target="navTab" rel="page3" title="页面三（自定义标签名）">页面三</a></li>
-									<li><a href="demo_page4.html" target="navTab" rel="page4" fresh="false">测试页面(fresh="false")</a></li>
-									<li><a href="w_editor.html" target="navTab">表单提交会话超时</a></li>
-									<li><a href="demo/common/ajaxTimeout.html" target="navTab">navTab会话超时</a></li>
-									<li><a href="demo/common/ajaxTimeout.html" target="dialog">dialog会话超时</a></li>
-									<li><a href="index_menu.html" target="_blank">横向导航条</a></li>
+									<li><a>新车采购需求表管理</a></li>
+									<li><a>新车预采购需求表管理</a></li>
+									<li><a>预采购匹配管理</a></li>
+									<li><a>整车采购订单管理</a></li>
+									<li><a>车辆采购需求表车源落实</a></li>
+									<li><a>新车合格证、发票到达确认</a></li>
+									<li><a>新车基本险投保确认</a></li>
+									<li><a>新车提车确认</a></li>
+									<li><a>新车加装确认</a></li>
+									<li><a>新车采购入库申请</a></li>
+									<li><a>新车采购入库审核</a></li>
+									<li><a>新车上牌费用管理</a></li>
+									<li><a>预采购资源预定</a></li>
+									<li><a>预采购资源查看</a></li>
+									<li><a>新车采购期间车源互换</a></li>
+									<li><a>新车采购终止划拨预采购</a></li>
+									<li><a>新车采购执行状态查询</a></li>
 								</ul>
 							</li>
-							
-							<li><a>常用组件</a>
+							<li><a>长租旧车需求表</a>
+								
+							</li>
+							<li><a>保险管理</a>
 								<ul>
-									<li><a href="w_panel.html" target="navTab" rel="w_panel">面板</a></li>
-									<li><a href="w_tabs.html" target="navTab" rel="w_tabs">选项卡面板</a></li>
-									<li><a href="w_dialog.html" target="navTab" rel="w_dialog">弹出窗口</a></li>
-									<li><a href="w_alert.html" target="navTab" rel="w_alert">提示窗口</a></li>
-									<li><a href="w_list.html" target="navTab" rel="w_list">CSS表格容器</a></li>
-									<li><a href="demo_page1.html" target="navTab" rel="w_table">表格容器</a></li>
-									<li><a href="w_removeSelected.html" target="navTab" rel="w_table">表格数据库排序+批量删除</a></li>
-									<li><a href="w_tree.html" target="navTab" rel="w_tree">树形菜单</a></li>
-									<li><a href="w_accordion.html" target="navTab" rel="w_accordion">滑动菜单</a></li>
-									<li><a href="w_editor.html" target="navTab" rel="w_editor">编辑器</a></li>
-									<li><a href="w_datepicker.html" target="navTab" rel="w_datepicker">日期控件</a></li>
-									<li><a href="demo/database/db_widget.html" target="navTab" rel="db">suggest+lookup+主从结构</a></li>
-									<li><a href="demo/database/treeBringBack.html" target="navTab" rel="db">tree查找带回</a></li>
-									<li><a href="demo/sortDrag/1.html" target="navTab" rel="sortDrag">单个sortDrag示例</a></li>
-									<li><a href="demo/sortDrag/2.html" target="navTab" rel="sortDrag">多个sortDrag示例</a></li>
-									<li><a href="demo/sortDrag/form.html" target="navTab" rel="sortDrag">可拖动表单示例</a></li>
+									<li><a>加保导入</a></li>
+									<li><a>退保导入</a></li>
+									<li><a>保险购买指令手工生成</a></li>
+									<li><a>保险退保指令手工生成</a></li>
+									<li><a>加保清单采购执行确认</a></li>
+									<li><a>退保清单采购执行确认</a></li>
+									<li><a>车船税管理</a></li>
+									<li><a>车船税导入</a></li>
+									<li><a>附加险续保指令生成</a></li>
+									<li><a>保险购买指令导入</a></li>
 								</ul>
 							</li>
-									
-							<li><a>表单组件</a>
+							<li><a>事故处理</a>
 								<ul>
-									<li><a href="w_validation.html" target="navTab" rel="w_validation">表单验证</a></li>
-									<li><a href="w_button.html" target="navTab" rel="w_button">按钮</a></li>
-									<li><a href="w_textInput.html" target="navTab" rel="w_textInput">文本框/文本域</a></li>
-									<li><a href="w_combox.html" target="navTab" rel="w_combox">下拉菜单</a></li>
-									<li><a href="w_checkbox.html" target="navTab" rel="w_checkbox">多选框/单选框</a></li>
-									<li><a href="demo_upload.html" target="navTab" rel="demo_upload">iframeCallback表单提交</a></li>
-									<li><a href="w_uploadify.html" target="navTab" rel="w_uploadify">uploadify多文件上传</a></li>
-									<li><a href="w_html5_upload.html" target="navTab" rel="html5_upload">html5文件上传</a></li>
+									<li><a>事故信息管理</a></li>
+									<li><a>事故进保总公司审核</a></li>
+									<li><a>总公司核算确认</a></li>
 								</ul>
 							</li>
-							<li><a>组合应用</a>
+							<li><a>车辆处置</a>
 								<ul>
-									<li><a href="demo/pagination/layout1.html" target="navTab" rel="pagination1">局部刷新分页1</a></li>
-									<li><a href="demo/pagination/layout2.html" target="navTab" rel="pagination2">局部刷新分页2</a></li>
+									<li><a>待处置车辆列表生成</a></li>
+									<li><a>车管中心处置车收车确认</a></li>
+									<li><a>处置车相关步骤完成确认</a></li>
+									<li><a>内部处置入库申请</a></li>
+									<li><a>内部处置入库审核</a></li>
 								</ul>
 							</li>
-							<li><a>图表</a>
-								<ul>
-									<li><a href="chart/test/barchart.html" target="navTab" rel="chart">柱状图(垂直)</a></li>
-									<li><a href="chart/test/hbarchart.html" target="navTab" rel="chart">柱状图(水平)</a></li>
-									<li><a href="chart/test/linechart.html" target="navTab" rel="chart">折线图</a></li>
-									<li><a href="chart/test/linechart2.html" target="navTab" rel="chart">曲线图</a></li>
-									<li><a href="chart/test/linechart3.html" target="navTab" rel="chart">曲线图(自定义X坐标)</a></li>
-									<li><a href="chart/test/piechart.html" target="navTab" rel="chart">饼图</a></li>
-								</ul>
-							</li>
-							<li><a href="dwz.frag.xml" target="navTab" external="true">dwz.frag.xml</a></li>
 						</ul>
 					</div>
 					<div class="accordionHeader">
-						<h2><span>Folder</span>典型页面</h2>
+						<h2><span>Folder</span>车辆运营管理</h2>
 					</div>
 					<div class="accordionContent">
-						<ul class="tree treeFolder treeCheck">
-							<li><a href="demo_page1.html" target="navTab" rel="demo_page1">查询我的客户</a></li>
-							<li><a href="demo_page1.html" target="navTab" rel="demo_page2">表单查询页面</a></li>
-							<li><a href="demo_page4.html" target="navTab" rel="demo_page4">表单录入页面</a></li>
-							<li><a href="demo_page5.html" target="navTab" rel="demo_page5">有文本输入的表单</a></li>
-							<li><a href="javascript:;">有提示的表单输入页面</a>
+						<ul class="tree treeFolder">
+							<li><a>车辆信息管理</a>
 								<ul>
-									<li><a href="javascript:;">页面一</a></li>
-									<li><a href="javascript:;">页面二</a></li>
+									<li><a>车辆档案修改</a></li>
+									<li><a>车辆档案查看</a></li>
+									<li><a>车辆状态管理</a></li>
+									<li><a>借用车辆信息维护</a></li>
+									<li><a>托管车辆信息维护</a></li>
+									<li><a>车辆疑难记录管理</a></li>
+									<li><a>GPS资产管理</a></li>
 								</ul>
 							</li>
-							<li><a href="javascript:;">选项卡和图形的页面</a>
+							<li><a>车辆调拨</a>
 								<ul>
-									<li><a href="javascript:;">页面一</a></li>
-									<li><a href="javascript:;">页面二</a></li>
+									<li><a>车辆调拨指令下达</a></li>
+									<li><a>车辆调拨指令发车确认</a></li>
+									<li><a>车辆调拨指令收车确认</a></li>
 								</ul>
 							</li>
-							<li><a href="javascript:;">选项卡和图形切换的页面</a></li>
-							<li><a href="javascript:;">左右两个互动的页面</a></li>
-							<li><a href="javascript:;">列表输入的页面</a></li>
-							<li><a href="javascript:;">双层栏目列表的页面</a></li>
+							<li><a>长租新合同发车</a></li>
+							<li><a>长租合同结束收车</a></li>
+							<li><a>年检业务</a>
+								<ul>
+									<li><a>车辆待年检清单查询</a></li>
+									<li><a>车辆年检记录管理</a></li>
+								</ul>
+							</li>
+							<li><a>维修业务</a></li>
+							<li><a>违章管理</a>
+								<ul>
+									<li><a>违章记录管理</a></li>
+									<li><a>违章记录查询</a></li>
+									<li><a>违章收款自理处理</a></li>
+								</ul>
+							</li>
+							<li><a>车辆日常运营工作记录管理</a>
+								<ul>
+									<li><a>非业务用车记录管理</a></li>
+									<li><a>抢修记录管理</a></li>
+									<li><a>长租临时替换记录</a></li>
+									<li><a>车辆期间加装记录管理</a></li>
+									<li><a>证件补办管理</a></li>
+									<li><a>钥匙借用记录管理</a></li>
+								</ul>
+							</li>
+							<li><a>油费管理</a>
+								<ul>
+									<li><a>油卡管理</a></li>
+									<li><a>每月油卡加油记录管理</a></li>
+								</ul>
+							</li>
+							<li><a>长租合同查询</a></li>
 						</ul>
 					</div>
 					<div class="accordionHeader">
-						<h2><span>Folder</span>流程演示</h2>
+						<h2><span>Folder</span>驾驶员管理</h2>
 					</div>
 					<div class="accordionContent">
-						<ul class="tree">
-							<li><a href="newPage1.html" target="dialog" rel="dlg_page">列表</a></li>
-							<li><a href="newPage1.html" target="dialog" rel="dlg_page2">列表</a></li>
+						
+					</div>
+					<div class="accordionHeader">
+						<h2><span>Folder</span>成本管理</h2>
+					</div>
+					<div class="accordionContent">
+						<ul class="tree treeFolder">
+							<li><a>单一成本管理</a>
+								<ul>
+									<li><a>门店洗车费管理</a></li>
+									<li><a>新车加装成本更新</a></li>
+									<li><a>长租代收代付费用管理</a></li>
+									<li><a>新车配件记录管理</a></li>
+									<li><a>车管短租停车路桥费管理</a></li>
+									<li><a>车辆异地驳运费用管理</a></li>
+									<li><a>车辆加油记录管理</a></li>
+									<li><a>年度规费费用管理</a></li>
+									<li><a>年度规费导入</a></li>
+								</ul>
+							</li>
+							<li><a>成本关联支付</a>
+								<ul>
+									<li><a>异地维修费用划拨确认</a></li>
+									<li><a>车辆维修费用申报</a></li>
+									<li><a>加装费用申报</a></li>
+									<li><a>油卡加油费用申报</a></li>
+									<li><a>长租代收代付费用申报</a></li>
+									<li><a>短租带驾停车路桥费申报</a></li>
+									<li><a>新车配件费用申报</a></li>
+									<li><a>新车上牌费用申报</a></li>
+									<li><a>补证费申报</a></li>
+									<li><a>车辆年检费用申报</a></li>
+									<li><a>车管短租停车路桥费申报</a></li>
+									<li><a>门店洗车费申报</a></li>
+									<li><a>车辆异地驳运费用申报</a></li>
+									<li><a>保险费申报</a></li>
+									<li><a>退保费申报</a></li>
+									<li><a>其它保险汇总成本申报</a></li>
+									<li><a>违章款支付申报</a></li>
+									<li><a>油卡冲值(普票)</a></li>
+									<li><a>现金加油费用申报</a></li>
+									<li><a>年度规费费用申报</a></li>
+								</ul>
+							</li>
+							<li><a>维修申报费用审核</a></li>
+							<li><a>退保明细审核</a></li>
+							<li><a>车辆折旧导入</a></li>
+							<li><a>油卡充值核销费用申报审核</a></li>
+							<li><a>加装费用申报审核</a></li>
+							<li><a>违章申报费用审核</a></li>
+						</ul>
+					</div>
+					<div class="accordionHeader">
+						<h2><span>Folder</span>报表管理</h2>
+					</div>
+					<div class="accordionContent">
+						<ul class="tree treeFolder">
+							<li><a>查询报表</a>
+								<ul>
+									<li><a>有加保记录没有合同约定的保险清单</a></li>
+									<li><a>新车采购汇总表</a></li>
+									<li><a>旧车处置汇总表</a></li>
+									<li><a>车辆加保记录汇总表</a></li>
+									<li><a>车辆退保记录汇总表</a></li>
+									<li><a>保险理赔记录汇总表</a></li>
+									<li><a>车辆状态历史汇总表</a></li>
+									<li><a>驾驶员工作记录汇总表</a></li>
+									<li><a>车辆维修记录汇总表</a></li>
+									<li><a>驾驶员基本工资调整表</a></li>
+									<li><a>驾驶员加班费开票差异统计表</a></li>
+									<li><a>历史在职驾驶员汇总表</a></li>
+									<li><a>驾驶员入、离职变动表</a></li>
+									<li><a>驾驶员岗位变动表</a></li>
+									<li><a>长租带驾业务公里数及单车油耗统计</a></li>
+									<li><a>车辆违章记录汇总表</a></li>
+									<li><a>车辆利用率统计报表</a></li>
+									<li><a>车辆状态统计报表</a></li>
+									<li><a>车队结果报表</a></li>
+									<li><a>各城市车辆养路费、规费、车船税表</a></li>
+									<li><a>单车成本报表</a></li>
+									<li><a>已审核成本科目明细表</a></li>
+									<li><a>车辆维修成本-车龄报表</a></li>
+									<li><a>月度门店车辆占用统计表</a></li>
+									<li><a>供应商名录报表</a></li>
+									<li><a>供应商交易统计报表</a></li>
+									<li><a>异地维修费用划拨报表</a></li>
+									<li><a>车辆预订报表</a></li>
+									<li><a>替代车时间报表</a></li>
+									<li><a>驾驶员与车辆所属分公司差异报表</a></li>
+									<li><a>长租带驾合同陪驾</a></li>
+									<li><a>车辆状态导出报表</a></li>
+									<li><a>短租租车率报表</a></li>
+									<li><a>有合同约定未加保清单</a></li>
+									<li><a>运营申报明细汇总报表</a></li>
+									<li><a>长租驾驶员业务报表</a></li>
+								</ul>
+							</li>
+							<li><a>多维度汇总分析报表</a>
+								<ul>
+									<li><a>新车采购统计报表</a></li>
+									<li><a>车辆处置统计报表</a></li>
+									<li><a>租车率统计报表</a></li>
+									<li><a>分公司单车维修统计报表</a></li>
+									<li><a>各分公司车辆状态统计报表</a></li>
+									<li><a>保险采购汇总表</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="accordionHeader">
+						<h2><span>Folder</span>基础管理</h2>
+					</div>
+					<div class="accordionContent">
+						<ul class="tree treeFolder">
+							<li><a>权限管理</a>
+								<ul>
+									<li><a>用户修改自身密码</a></li>
+									<li><a>变更所在组织节点</a></li>
+								</ul>
+							</li>
+							<li><a>其它管理</a>
+								<ul>
+									<li><a>可信度&超定百分比设定</a></li>
+								</ul>
+							</li>
+							<li><a>供应商信息管理</a></li>
 						</ul>
 					</div>
 				</div>
@@ -260,7 +329,7 @@ $(function(){
 				<div class="tabsPageHeader">
 					<div class="tabsPageHeaderContent"><!-- 显示左右控制时添加 class="tabsPageHeaderMargin" -->
 						<ul class="navTab-tab">
-							<li tabid="main" class="main"><a href="javascript:;"><span><span class="home_icon">我的主页</span></span></a></li>
+							<li tabid="main" class="main"><a href="javascript:;"><span><span class="home_icon">首页</span></span></a></li>
 						</ul>
 					</div>
 					<div class="tabsLeft">left</div><!-- 禁用只需要添加一个样式 class="tabsLeft tabsLeftDisabled" -->
@@ -268,10 +337,11 @@ $(function(){
 					<div class="tabsMore">more</div>
 				</div>
 				<ul class="tabsMoreList">
-					<li><a href="javascript:;">我的主页</a></li>
+					<li><a href="javascript:;">首页</a></li>
 				</ul>
 				<div class="navTab-panel tabsPageContent layoutBox">
 					<div class="page unitBox">
+						
 						<div class="accountInfo">
 							<div class="alertInfo">
 								<p><a href="https://code.csdn.net/dwzteam/dwz_jui/tree/master/doc" target="_blank" style="line-height:19px"><span>DWZ框架使用手册</span></a></p>
@@ -284,7 +354,6 @@ $(function(){
 							<p>DWZ官方微博:<a href="http://weibo.com/dwzui" target="_blank">http://weibo.com/dwzui</a></p>
 						</div>
 						<div class="pageFormContent" layoutH="80">
-
 
 <h2>DWZ系列开源项目:</h2>
 <div class="unit"><a href="https://git.oschina.net/dwzteam/dwz_jui" target="_blank">dwz富客户端框架 - jUI</a></div>
@@ -326,10 +395,10 @@ Error loading XML document: dwz.frag.xml
 邮箱：support@jui.org
 </pre>
 <a class="button" href="http://code.csdn.net/groups/2155" target="_blank"><span>DWZ讨论组</span></a>
+
 						</div>
-						
-					</div>
 					
+					</div>
 				</div>
 			</div>
 		</div>
